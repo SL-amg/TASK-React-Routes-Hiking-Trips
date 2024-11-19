@@ -10,10 +10,11 @@ const trip = tripsData.find((trip)=>trip.id === +tripId);
 
 //this function will send us to home if link enterend not avaible .. therefor
 //we define a navigate = usenavigate
+// IMPOrtant dont forget to import at top !! 
 //then if statment and if not equal to trip (!trip) excucte the function which is navigate to home
 const navigate = useNavigate();
 if (!trip){
- return <Navigate to="/home" />;
+ return <Navigate to="/tripList" />;
  }
 
 // const trip = tripsData[0];

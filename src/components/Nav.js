@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+
 function Nav() {
   return (
     <nav
@@ -10,19 +11,20 @@ function Nav() {
       <div className="container">
         <NavLink style={({ isActive }) => {
           return {
-            color: isActive ? "white" : "black"
+            textDecorationLine: isActive ? "underline" : "none"
           }
         }} to="/"> 
           Hike
         </NavLink>
-        {/* change the to to the link of we need  */}
+        {/* change the to to the link of we need 
+        and for styling add this fixed format */}
 
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-0 mx-lg-1">
               <NavLink style={({ isActive }) => {
                 return {
-                  color: isActive ? "white" : "black"
+                    textDecorationLine: isActive ? "underline" : "none"
                 }
               }} to="/home">
                 Home
@@ -32,7 +34,7 @@ function Nav() {
             <li className="nav-item mx-0 mx-lg-1">
               <NavLink style={({ isActive }) => {
                 return {
-                  color: isActive ? "white" : "black"
+                    textDecorationLine: isActive ? "underline" : "none"
                 }
               }} to="/TripList">
                 Trips

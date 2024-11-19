@@ -10,7 +10,7 @@ import TripDetail from './components/TripDetail';
 import Nav from './components/Nav';
 
 const router = createBrowserRouter([
-  {
+  { 
     path:"/",
     element: <>
         <Nav />
