@@ -1,8 +1,23 @@
 import React from 'react';
 import tripsData from '../tripsData';
+import { Navigate, useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 
 function TripDetail() {
-  const trip = tripsData[0];
+const {tripId} = useParams (); // to take what is in the link and add it in tripId
+
+const trip = tripsData.find((trip)=>trip.id === +tripId);
+
+//this function will send us to home if link enterend not avaible .. therefor
+//we define a navigate = usenavigate
+//then if statment and if not equal to trip (!trip) excucte the function which is navigate to home
+const navigate = useNavigate();
+if (!trip){
+ return <Navigate to="/home" />;
+ }
+
+// const trip = tripsData[0];
+
   return (
     <div className="modal-dialog modal-xl">
       <div className="modal-content">

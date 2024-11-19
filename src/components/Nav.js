@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Nav() {
   return (
@@ -7,21 +8,36 @@ function Nav() {
       id="mainNav"
     >
       <div className="container">
-        <a className="navbar-brand" href="#">
+        <NavLink style={({ isActive }) => {
+          return {
+            color: isActive ? "white" : "black"
+          }
+        }} to="/"> 
           Hike
-        </a>
+        </NavLink>
+        {/* change the to to the link of we need  */}
 
         <div className="collapse navbar-collapse" id="navbarResponsive">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-0 mx-lg-1">
-              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#">
+              <NavLink style={({ isActive }) => {
+                return {
+                  color: isActive ? "white" : "black"
+                }
+              }} to="/home">
                 Home
-              </a>
+              </NavLink>
+                 {/* change the to to the link of we need to="/home" this is important */}
             </li>
             <li className="nav-item mx-0 mx-lg-1">
-              <a className="nav-link py-3 px-0 px-lg-3 rounded" href="#">
+              <NavLink style={({ isActive }) => {
+                return {
+                  color: isActive ? "white" : "black"
+                }
+              }} to="/TripList">
                 Trips
-              </a>
+              </NavLink>
+                 {/* change the to to the link of we need to="/TripList"  */}
             </li>
           </ul>
         </div>
